@@ -1,0 +1,25 @@
+minimum_cumulusci_version: '3.64.0'
+project:
+    name: initial-project
+    package:
+        name: initial-project
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/initial-project/tests
+            options:
+                outputdir: robot/initial-project/results
+
+    robot_testdoc:
+        options:
+            path: robot/initial-project/tests
+            output: robot/initial-project/doc/initial-project_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
